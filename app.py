@@ -15,13 +15,13 @@ def main():
 # TODO: >>>>>>>>>>>>>>>>>>>>>>>>>> Empezamoos a crear las rutas y los metodos para la REST API
 @app.route('/ping')  # us GET por defecto
 def ping():
-    return jsonify({"mensje": "pong"})
+    return jsonify({"mensaje": "pong"})
 
 # TODO: >>>>>>>>>>>>>>>>>>>>>>>>>> Obtener todos los objetos de la lista
 @app.route('/clientFeatures')
 def getProdutcs():
     # estructura del objeto
-    return jsonify({"clientes": modelFeatures, "mensje": "aqui los featutres por cleintes"})
+    return jsonify({"clientes": modelFeatures, "mensaje": "Aqui los features por clientes"})
 
 # TODO: >>>>>>>>>>>>>>>>>>>>>>>>>>  Obtener un objeto de la lista
 # esta ruta recibe paramtros para extraer info del objeto de forma dinamica
@@ -41,8 +41,8 @@ def predict(**objeto):
 @app.route('/predict', methods=['POST'])
 def addObj():
     newObjDict = request.json
-    print("recibi: ",newObjDict)
-    print("---------",type(newObjDict))
+    # print("recibi: ",newObjDict)
+    # print("---------",type(newObjDict))
     # ! esto no modifica en memoria debe ser sustituido por una DB
     # modelFeatures.append(newObjDict)
     p=predict(**newObjDict)
