@@ -33,8 +33,9 @@ def predict(**objeto):
     # print(">>>>> Dataframe",mF_df)
     # cargo modelo para probar
     model = pickle.load(open('VF_model_rf.pkl', 'rb'))
-    print(model.predict(mF_df))
-    return model.predict(mF_df)
+    pred=model.predict(mF_df)
+    print(type(pred))
+    return "pred"
 
 # TODO: >>>>>>>>>>>>>>>>>>>>>>>>>> Predecir y agregar
 @app.route('/predict', methods=['POST'])
