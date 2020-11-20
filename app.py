@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 # TODO: >>>>>>>>>>>>>>>>>>>>>>>>>> MAIN
 def main():
-    app.run(debug=True, port=4000)
+    app.run(debug=True, port=8000)
 
 # TODO: >>>>>>>>>>>>>>>>>>>>>>>>>> Empezamoos a crear las rutas y los metodos para la REST API
 @app.route('/ping')  # us GET por defecto
