@@ -48,6 +48,11 @@ def addObj():
     p=predict(**newObjDict)
     return jsonify({'pred': p})
 
+# A welcome message to test our server
+@app.route('/')
+def index():
+    return "<h1>Servidor AI 4 Secure on!</h1>"
+
 # ejecucion del servidor
 if __name__ == '__main__':
     main()
