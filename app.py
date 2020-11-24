@@ -34,8 +34,8 @@ def predict(**objeto):
     # cargo modelo para probar
     model = pickle.load(open('VF_model_rf.pkl', 'rb'))
     pred=model.predict(mF_df)
-    print(type(pred))
-    return "pred"
+    print("Resultado",pred[0])
+    return int(pred[0])
 
 # TODO: >>>>>>>>>>>>>>>>>>>>>>>>>> Predecir y agregar
 @app.route('/predict', methods=['POST'])
@@ -48,7 +48,7 @@ def addObj():
     p=predict(**newObjDict)
     return jsonify({'pred': p})
 
-# A welcome message to test our server
+# Mensaje de bienvenida
 @app.route('/')
 def index():
     return "<h1>Servidor AI 4 Secure on!</h1>"
