@@ -12,5 +12,5 @@ Anlizar el puerto correcto por defecto el permitido es el 5000
 # Compatibilidad
 Analizar las versiones con las que se entreno el modelo 
 
-# Revisar el Serevidor
+# Revisar el Log del Servidor Heroku
 heroku logs --app=ai4sec --tail
