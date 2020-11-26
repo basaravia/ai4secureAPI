@@ -6,7 +6,6 @@ modelFeatures = [{
     'Vehicle Make':  'OTHER',
     'Vehicle Body Type': 'PASSENGER CAR',
     'Vehicle Model': 'COROLLA',
-    'Month': 'January',
     'Day': 4,
     'Year': 2017,
     'Hour': 7}]

@@ -30,11 +30,11 @@ def predict(**objeto):
     features = dict(objeto)
     mF_df=pd.DataFrame(columns=(list(features.keys())))
     mF_df.loc[len(mF_df)]=list(features.values())
-    # print(">>>>> Dataframe",mF_df)
+    print(">>>>> Dataframe",mF_df)
     # cargo modelo para probar
-    model = pickle.load(open('VF_model_rf.pkl', 'rb'))
+    model = pickle.load(open('RF_VF.pkl','rb'))
     pred=model.predict(mF_df)
-    print("Resultado",pred[0])
+    print("prediction: ",pred[0])
     return int(pred[0])
 
 # TODO: >>>>>>>>>>>>>>>>>>>>>>>>>> Predecir y agregar
@@ -46,7 +46,7 @@ def addObj():
     # ! esto no modifica en memoria debe ser sustituido por una DB
     # modelFeatures.append(newObjDict)
     p=predict(**newObjDict)
-    return jsonify({'pred': p})
+    return jsonify({'prediction': p})
 
 # Mensaje de bienvenida
 @app.route('/')
